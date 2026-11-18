@@ -11,7 +11,7 @@ Readers of the Korean, Japanese and English editions share it, so everything her
 | `sales.py` | A small program that adds up sales by month from a CSV file |
 | `data/sample.csv` | A few rows of sample sales data |
 | `tests/test_sales.py` | Tests for `sales.py` |
-| `.github/workflows/tests.yml` | Runs `uv run pytest` on every push and every PR |
+| `.github/workflows/tests.yml` | Runs `uv run pytest` on every push to this repository and on every PR to it. In your fork, GitHub Actions is off by default, so pushing to your fork does not run it |
 | `CONTRIBUTING.md` | How to send a practice PR. Read it before you start |
 
 ## Run it
@@ -28,6 +28,10 @@ uv run pytest
 1. Pick an issue labelled `exercise`.
 2. Send a PR in the order described in `CONTRIBUTING.md`.
 3. The automated tests run first. A PR whose tests fail is not reviewed until they pass.
+   If this is your first contribution here, the tests start only after the maintainer approves the run;
+   until then your PR shows that the run is waiting for approval. A run not approved within 30 days expires.
+   Practice PRs are usually closed rather than merged, so most readers go through this approval.
+   (GitHub Docs: "Managing GitHub Actions settings for a repository", "Approving workflow runs from forks".)
 4. Then the author of the book reviews the PR.
 
 Please keep in mind:

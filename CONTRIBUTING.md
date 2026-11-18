@@ -4,8 +4,8 @@ This repository is for practice. Thank you for sending a PR; please read this pa
 
 ## The flow
 
-1. **Fork** this repository to your GitHub account: `gh repo fork crowdy/prompt-python-practice`
-2. **Clone** your fork and move into it: `git clone <your fork's URL>`, then `cd prompt-python-practice`
+1. **Fork** this repository to your GitHub account: `gh repo fork crowdy/prompt-python-practice --clone=false`
+2. **Clone** your fork (check that the URL has your account name) and move into it: `git clone <your fork's URL>`, then `cd prompt-python-practice`
 3. **Branch**: make a new branch for the issue, for example `git switch -c add-test-same-month`.
    Do not work on `main`.
 
@@ -14,10 +14,19 @@ This repository is for practice. Thank you for sending a PR; please read this pa
 Every change follows the same order. Do not skip a step because the change is small.
 
 1. **Test**: write or change the test for your change.
+   A change that does not change behavior (documentation, comments) needs no new test: start from step 2.
 2. **`uv run pytest`**: run all the tests on your computer and read the result.
 3. **Commit**: one commit for one change, with a message that says what changed.
 4. **Push**: `git push -u origin <your branch>`
 5. **PR**: open a PR from your branch to `main` of this repository.
+
+## When the tests run
+
+- In your fork, GitHub Actions is off by default, so pushing to your fork does not run the tests. Run `uv run pytest` yourself (step 2).
+- Until a PR of yours has been merged here, the tests start only after the maintainer approves the run. Until then the PR shows that the run is
+  waiting for approval. A run not approved within 30 days expires. Most practice PRs are closed rather than merged,
+  so most readers go through this approval. (GitHub Docs: "Managing GitHub Actions settings for a repository",
+  "Approving workflow runs from forks".)
 
 ## Keep the PR small
 
@@ -39,9 +48,9 @@ The PR template asks four things. Fill in all of them.
 
 AI tools are allowed here. If you used one, say so in the PR description:
 
-- which tool you used (for example Claude Code),
+- the tool and its version (for example Claude Code 2.1.325),
 - what you asked it to do,
-- what you checked yourself (which lines you read, which commands you ran).
+- what you did yourself (which lines you read, which commands you ran).
 
 If you did not use an AI tool, write "None".
 
