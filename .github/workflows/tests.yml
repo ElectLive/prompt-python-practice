@@ -1,0 +1,16 @@
+# Fixed file (chapter 13). Copy it to .github/workflows/tests.yml in your own repository.
+# It runs your tests on GitHub for every push and every pull request.
+name: tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: astral-sh/setup-uv@v10.3.3
+      - run: uv python install
+      - run: uv run pytest
